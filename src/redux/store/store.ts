@@ -3,6 +3,10 @@ import EmpresaReducer from '../slices/EmpresaReducer'
 import ModalReducer from '../slices/ModalReducer'
 import SucursalReducer from '../slices/SucursalReducer'
 import TablaReducer from '../slices/TablaReducer'
+import ProductoReducer from '../slices/ProductoReducer'
+import PromocionReducer from '../slices/PromocionReducer'
+import InsumoReducer from '../slices/InsumoReducer'
+import CategoriaReducer from '../slices/CategoriaReducer'
 
 
 export const store = configureStore({
@@ -10,7 +14,11 @@ export const store = configureStore({
     empresa: EmpresaReducer,
     modal: ModalReducer,
     sucursal: SucursalReducer,
-    tabla: TablaReducer
+    tabla: TablaReducer,
+    producto: ProductoReducer,
+    promocion: PromocionReducer,
+    insumo: InsumoReducer,
+    categoria: CategoriaReducer,
   },
 })
 

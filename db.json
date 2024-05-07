@@ -621,5 +621,1188 @@
       "cuil": "87652918271",
       "sucursales": []
     }
+  ],
+
+  "promociones": [
+    {
+      "id": 1,
+      "denominacion": "Dia de los Enamorados",
+      "fechaDesde": "2024-02-13",
+      "fechaHasta": "2024-02-15",
+      "horaDesde": "00:00:00",
+      "horaHasta": "23:59:00",
+      "descripcionDescuento": "El descuento que se hace por san valentin, un dia antes y un dia despues",
+      "precioPromocional": 100,
+      "tipoPromocion": "promocion",
+      "articulos": [
+        {
+          "id": 6,
+          "denominacion": "Pizza Muzarella",
+          "precioVenta": 150,
+          "imagenes": [
+            {
+              "id": 6,
+              "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+            }
+          ],
+          "unidadMedida": {
+            "id": 4,
+            "denominacion": "Porciones"
+          }
+        },
+        {
+          "id": 1,
+          "denominacion": "Coca cola",
+          "precioVenta": 70,
+          "imagenes": [
+            {
+              "id": 1,
+              "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+            }
+          ],
+          "unidadMedida": {
+            "id": 1,
+            "denominacion": "Litros"
+          }
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 10,
+          "url": "https://images.unsplash.com/photo-1581022295087-35e593704911?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "denominacion": "Combo Pizza",
+      "fechaDesde": "2024-04-25",
+      "fechaHasta": "2024-05-05",
+      "horaDesde": "00:00:00",
+      "horaHasta": "23:59:00",
+      "descripcionDescuento": "¡Disfruta de un combo especial de pizza!",
+      "precioPromocional": 180,
+      "tipoPromocion": "combo",
+      "articulos": [
+        {
+          "id": 6,
+          "denominacion": "Pizza Muzarella",
+          "precioVenta": 150,
+          "imagenes": [
+            {
+              "id": 6,
+              "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+            }
+          ],
+          "unidadMedida": {
+            "id": 4,
+            "denominacion": "Porciones"
+          }
+        },
+        {
+          "id": 1,
+          "denominacion": "Coca cola",
+          "precioVenta": 70,
+          "imagenes": [
+            {
+              "id": 1,
+              "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+            }
+          ],
+          "unidadMedida": {
+            "id": 1,
+            "denominacion": "Litros"
+          }
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 11,
+          "url": "https://plus.unsplash.com/premium_photo-1679436987530-ee11b5600161?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "horaEstimadaFinalizacion": "14:45:53.474",
+      "total": 300,
+      "totalCosto": 170.6,
+      "estado": "Preparacion",
+      "tipoEnvio": "Delivery",
+      "formaPago": "MercadoPago",
+      "fechaPedido": "2024-04-23",
+      "domicilio": {
+        "id": 1,
+        "calle": "Viamonte",
+        "numero": 500,
+        "cp": 5509,
+        "piso": 2,
+        "nroDpto": 23,
+        "localidad": {
+          "id": 1,
+          "nombre": "Lujan de Cuyo",
+          "provincia": {
+            "id": 1,
+            "nombre": "Mendoza",
+            "pais": {
+              "id": 1,
+              "nombre": "Argentina"
+            }
+          }
+        }
+      },
+      "sucursal": {
+        "id": 1,
+        "nombre": "En chacras",
+        "horarioApertura": "17:00:00",
+        "horarioCierre": "23:00:00",
+        "domicilio": {
+          "id": 1,
+          "calle": "Viamonte",
+          "numero": 500,
+          "cp": 5509,
+          "piso": 2,
+          "nroDpto": 23,
+          "localidad": {
+            "id": 1,
+            "nombre": "Lujan de Cuyo",
+            "provincia": {
+              "id": 1,
+              "nombre": "Mendoza",
+              "pais": {
+                "id": 1,
+                "nombre": "Argentina"
+              }
+            }
+          }
+        },
+        "categorias": [
+          {
+            "id": 4,
+            "denominacion": "Pizzas",
+            "articulos": [
+              {
+                "id": 5,
+                "denominacion": "Pizza Muzarella",
+                "precioVenta": 130,
+                "imagenes": [
+                  {
+                    "id": 5,
+                    "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                  }
+                ],
+                "unidadMedida": {
+                  "id": 4,
+                  "denominacion": "Porciones"
+                }
+              },
+              {
+                "id": 6,
+                "denominacion": "Pizza Muzarella",
+                "precioVenta": 150,
+                "imagenes": [
+                  {
+                    "id": 6,
+                    "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                  }
+                ],
+                "unidadMedida": {
+                  "id": 4,
+                  "denominacion": "Porciones"
+                }
+              }
+            ],
+            "subCategorias": []
+          },
+          {
+            "id": 1,
+            "denominacion": "Bebidas",
+            "articulos": [],
+            "subCategorias": [
+              {
+                "id": 2,
+                "denominacion": "Gaseosas",
+                "articulos": [
+                  {
+                    "id": 1,
+                    "denominacion": "Coca cola",
+                    "precioVenta": 70,
+                    "imagenes": [
+                      {
+                        "id": 1,
+                        "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                      }
+                    ],
+                    "unidadMedida": {
+                      "id": 1,
+                      "denominacion": "Litros"
+                    }
+                  }
+                ],
+                "subCategorias": []
+              },
+              {
+                "id": 3,
+                "denominacion": "Tragos",
+                "articulos": [],
+                "subCategorias": []
+              }
+            ]
+          }
+        ],
+        "promociones": [
+          {
+            "id": 1,
+            "denominacion": "Dia de los Enamorados",
+            "fechaDesde": "2024-02-13",
+            "fechaHasta": "2024-02-15",
+            "horaDesde": "00:00:00",
+            "horaHasta": "23:59:00",
+            "descripcionDescuento": "El descuento que se hace por san valentin, un dia antes y un dia despues",
+            "precioPromocional": 100,
+            "tipoPromocion": "promocion",
+            "articulos": [
+              {
+                "id": 1,
+                "denominacion": "Coca cola",
+                "precioVenta": 70,
+                "imagenes": [
+                  {
+                    "id": 1,
+                    "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                  }
+                ],
+                "unidadMedida": {
+                  "id": 1,
+                  "denominacion": "Litros"
+                }
+              },
+              {
+                "id": 6,
+                "denominacion": "Pizza Muzarella",
+                "precioVenta": 150,
+                "imagenes": [
+                  {
+                    "id": 6,
+                    "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                  }
+                ],
+                "unidadMedida": {
+                  "id": 4,
+                  "denominacion": "Porciones"
+                }
+              }
+            ],
+            "imagenes": []
+          }
+        ]
+      },
+      "factura": null,
+      "detallePedidos": [
+        {
+          "id": 1,
+          "cantidad": 2,
+          "subTotal": 100,
+          "articulo": {
+            "id": 1,
+            "denominacion": "Coca cola",
+            "precioVenta": 70,
+            "imagenes": [
+              {
+                "id": 1,
+                "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 1,
+              "denominacion": "Litros"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "cantidad": 1,
+          "subTotal": 200,
+          "articulo": {
+            "id": 5,
+            "denominacion": "Pizza Muzarella",
+            "precioVenta": 130,
+            "imagenes": [
+              {
+                "id": 5,
+                "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 4,
+              "denominacion": "Porciones"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "imagenes": [
+    {
+      "id": 1,
+      "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+    },
+    {
+      "id": 2,
+      "url": "https://mandolina.co/wp-content/uploads/2023/03/648366622-1024x683.jpg"
+    },
+    {
+      "id": 3,
+      "url": "https://superdepaso.com.ar/wp-content/uploads/2021/06/SANTAROSA-PATEGRAS-04.jpg"
+    },
+    {
+      "id": 4,
+      "url": "https://thefoodtech.com/wp-content/uploads/2020/06/Componentes-de-calidad-en-el-tomate-828x548.jpg"
+    },
+    {
+      "id": 5,
+      "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+    },
+    {
+      "id": 6,
+      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+    },
+    {
+      "id": 7,
+      "url": "https://hips.hearstapps.com/hmg-prod/images/la-la-land-final-1638446140.jpg"
+    }
+  ],
+  "facturas": [],
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Sebastian",
+      "apellido": "Wilder",
+      "telefono": "2615920825",
+      "email": "correoFalso@gmail.com",
+      "usuario": {
+        "id": 1,
+        "auth0Id": "9565a49d-ecc1-4f4e-adea-6cdcb7edc4a3",
+        "username": "sebastian"
+      },
+      "imagen": {
+        "id": 7,
+        "url": "https://hips.hearstapps.com/hmg-prod/images/la-la-land-final-1638446140.jpg"
+      },
+      "pedidos": [
+        {
+          "id": 1,
+          "horaEstimadaFinalizacion": "14:45:53.474",
+          "total": 300,
+          "totalCosto": 170.6,
+          "estado": "Preparacion",
+          "tipoEnvio": "Delivery",
+          "formaPago": "MercadoPago",
+          "fechaPedido": "2024-04-23",
+          "domicilio": {
+            "id": 1,
+            "calle": "Viamonte",
+            "numero": 500,
+            "cp": 5509,
+            "piso": 2,
+            "nroDpto": 23,
+            "localidad": {
+              "id": 1,
+              "nombre": "Lujan de Cuyo",
+              "provincia": {
+                "id": 1,
+                "nombre": "Mendoza",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          },
+          "sucursal": {
+            "id": 1,
+            "nombre": "En chacras",
+            "horarioApertura": "17:00:00",
+            "horarioCierre": "23:00:00",
+            "domicilio": {
+              "id": 1,
+              "calle": "Viamonte",
+              "numero": 500,
+              "cp": 5509,
+              "piso": 2,
+              "nroDpto": 23,
+              "localidad": {
+                "id": 1,
+                "nombre": "Lujan de Cuyo",
+                "provincia": {
+                  "id": 1,
+                  "nombre": "Mendoza",
+                  "pais": {
+                    "id": 1,
+                    "nombre": "Argentina"
+                  }
+                }
+              }
+            },
+            "categorias": [
+              {
+                "id": 4,
+                "denominacion": "Pizzas",
+                "articulos": [
+                  {
+                    "id": 6,
+                    "denominacion": "Pizza Muzarella",
+                    "precioVenta": 150,
+                    "imagenes": [
+                      {
+                        "id": 6,
+                        "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                      }
+                    ],
+                    "unidadMedida": {
+                      "id": 4,
+                      "denominacion": "Porciones"
+                    }
+                  },
+                  {
+                    "id": 5,
+                    "denominacion": "Pizza Muzarella",
+                    "precioVenta": 130,
+                    "imagenes": [
+                      {
+                        "id": 5,
+                        "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                      }
+                    ],
+                    "unidadMedida": {
+                      "id": 4,
+                      "denominacion": "Porciones"
+                    }
+                  }
+                ],
+                "subCategorias": []
+              },
+              {
+                "id": 1,
+                "denominacion": "Bebidas",
+                "articulos": [],
+                "subCategorias": [
+                  {
+                    "id": 2,
+                    "denominacion": "Gaseosas",
+                    "articulos": [
+                      {
+                        "id": 1,
+                        "denominacion": "Coca cola",
+                        "precioVenta": 70,
+                        "imagenes": [
+                          {
+                            "id": 1,
+                            "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                          }
+                        ],
+                        "unidadMedida": {
+                          "id": 1,
+                          "denominacion": "Litros"
+                        }
+                      }
+                    ],
+                    "subCategorias": []
+                  },
+                  {
+                    "id": 3,
+                    "denominacion": "Tragos",
+                    "articulos": [],
+                    "subCategorias": []
+                  }
+                ]
+              }
+            ],
+            "promociones": [
+              {
+                "id": 1,
+                "denominacion": "Dia de los Enamorados",
+                "fechaDesde": "2024-02-13",
+                "fechaHasta": "2024-02-15",
+                "horaDesde": "00:00:00",
+                "horaHasta": "23:59:00",
+                "descripcionDescuento": "El descuento que se hace por san valentin, un dia antes y un dia despues",
+                "precioPromocional": 100,
+                "tipoPromocion": "promocion",
+                "articulos": [
+                  {
+                    "id": 6,
+                    "denominacion": "Pizza Muzarella",
+                    "precioVenta": 150,
+                    "imagenes": [
+                      {
+                        "id": 6,
+                        "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                      }
+                    ],
+                    "unidadMedida": {
+                      "id": 4,
+                      "denominacion": "Porciones"
+                    }
+                  },
+                  {
+                    "id": 1,
+                    "denominacion": "Coca cola",
+                    "precioVenta": 70,
+                    "imagenes": [
+                      {
+                        "id": 1,
+                        "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                      }
+                    ],
+                    "unidadMedida": {
+                      "id": 1,
+                      "denominacion": "Litros"
+                    }
+                  }
+                ],
+                "imagenes": []
+              }
+            ]
+          },
+          "factura": null,
+          "detallePedidos": [
+            {
+              "id": 1,
+              "cantidad": 2,
+              "subTotal": 100,
+              "articulo": {
+                "id": 1,
+                "denominacion": "Coca cola",
+                "precioVenta": 70,
+                "imagenes": [
+                  {
+                    "id": 1,
+                    "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                  }
+                ],
+                "unidadMedida": {
+                  "id": 1,
+                  "denominacion": "Litros"
+                }
+              }
+            },
+            {
+              "id": 2,
+              "cantidad": 1,
+              "subTotal": 200,
+              "articulo": {
+                "id": 5,
+                "denominacion": "Pizza Muzarella",
+                "precioVenta": 130,
+                "imagenes": [
+                  {
+                    "id": 5,
+                    "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                  }
+                ],
+                "unidadMedida": {
+                  "id": 4,
+                  "denominacion": "Porciones"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "domicilios": [
+        {
+          "id": 1,
+          "calle": "Viamonte",
+          "numero": 500,
+          "cp": 5509,
+          "piso": 2,
+          "nroDpto": 23,
+          "localidad": {
+            "id": 1,
+            "nombre": "Lujan de Cuyo",
+            "provincia": {
+              "id": 1,
+              "nombre": "Mendoza",
+              "pais": {
+                "id": 1,
+                "nombre": "Argentina"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "denominacion": "Bebidas",
+      "articulos": [],
+      "subCategorias": [
+        {
+          "id": 3,
+          "denominacion": "Tragos",
+          "articulos": [],
+          "subCategorias": []
+        },
+        {
+          "id": 2,
+          "denominacion": "Gaseosas",
+          "articulos": [
+            {
+              "id": 1,
+              "denominacion": "Coca cola",
+              "precioVenta": 70,
+              "imagenes": [
+                {
+                  "id": 1,
+                  "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                }
+              ],
+              "unidadMedida": {
+                "id": 1,
+                "denominacion": "Litros"
+              }
+            }
+          ],
+          "subCategorias": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "denominacion": "Gaseosas",
+      "articulos": [
+        {
+          "id": 1,
+          "denominacion": "Coca cola",
+          "precioVenta": 70,
+          "imagenes": [
+            {
+              "id": 1,
+              "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+            }
+          ],
+          "unidadMedida": {
+            "id": 1,
+            "denominacion": "Litros"
+          }
+        }
+      ],
+      "subCategorias": []
+    },
+    {
+      "id": 3,
+      "denominacion": "Tragos",
+      "articulos": [],
+      "subCategorias": []
+    },
+    {
+      "id": 4,
+      "denominacion": "Pizzas",
+      "articulos": [
+        {
+          "id": 6,
+          "denominacion": "Pizza Muzarella",
+          "precioVenta": 150,
+          "imagenes": [
+            {
+              "id": 6,
+              "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+            }
+          ],
+          "unidadMedida": {
+            "id": 4,
+            "denominacion": "Porciones"
+          }
+        },
+        {
+          "id": 5,
+          "denominacion": "Pizza Muzarella",
+          "precioVenta": 130,
+          "imagenes": [
+            {
+              "id": 5,
+              "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+            }
+          ],
+          "unidadMedida": {
+            "id": 4,
+            "denominacion": "Porciones"
+          }
+        }
+      ],
+      "subCategorias": []
+    },
+    {
+      "id": 6,
+      "denominacion": "Hamburguesas",
+      "articulos": [],
+      "subCategorias": []
+    }
+  ],
+  "articulosManufacturados": [
+    {
+      "id": 1,
+      "denominacion": "Pizza Muzarella",
+      "precioVenta": 130,
+      "imagenes": [
+        {
+          "id": 5,
+          "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+        }
+      ],
+      "unidadMedida": {
+        "id": 4,
+        "denominacion": "Porciones"
+      },
+      "descripcion": "Una pizza clasica",
+      "tiempoEstimadoMinutos": 15,
+      "preparacion": "Pasos de preparacion de una muzza de toda la vida",
+      "articuloManufacturadoDetalles": [
+        {
+          "id": 2,
+          "cantidad": 600,
+          "articuloInsumo": {
+            "id": 3,
+            "denominacion": "Queso",
+            "precioVenta": 66.6,
+            "imagenes": [
+              {
+                "id": 3,
+                "url": "https://superdepaso.com.ar/wp-content/uploads/2021/06/SANTAROSA-PATEGRAS-04.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 2,
+              "denominacion": "Gramos"
+            },
+            "precioCompra": 23.6,
+            "stockActual": 20,
+            "stockMaximo": 50,
+            "esParaElaborar": true
+          }
+        },
+        {
+          "id": 1,
+          "cantidad": 300,
+          "articuloInsumo": {
+            "id": 2,
+            "denominacion": "Harina",
+            "precioVenta": 60.5,
+            "imagenes": [
+              {
+                "id": 2,
+                "url": "https://mandolina.co/wp-content/uploads/2023/03/648366622-1024x683.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 2,
+              "denominacion": "Gramos"
+            },
+            "precioCompra": 40,
+            "stockActual": 4,
+            "stockMaximo": 40,
+            "esParaElaborar": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "denominacion": "Pizza Margarita",
+      "precioVenta": 150,
+      "imagenes": [
+        {
+          "id": 6,
+          "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+        }
+      ],
+      "unidadMedida": {
+        "id": 4,
+        "denominacion": "Porciones"
+      },
+      "descripcion": "Típica pizza napolitana elaborada con tomate, mozzarella, albahaca fresca, sal y aceite.",
+      "tiempoEstimadoMinutos": 15,
+      "preparacion": "Pasos de preparacion de una pizza napolitana italiana",
+      "articuloManufacturadoDetalles": [
+        {
+          "id": 5,
+          "cantidad": 2,
+          "articuloInsumo": {
+            "id": 4,
+            "denominacion": "Tomate",
+            "precioVenta": 66.6,
+            "imagenes": [
+              {
+                "id": 4,
+                "url": "https://thefoodtech.com/wp-content/uploads/2020/06/Componentes-de-calidad-en-el-tomate-828x548.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 3,
+              "denominacion": "Cantidad"
+            },
+            "precioCompra": 23.6,
+            "stockActual": 20,
+            "stockMaximo": 50,
+            "esParaElaborar": true
+          }
+        },
+        {
+          "id": 3,
+          "cantidad": 350,
+          "articuloInsumo": {
+            "id": 2,
+            "denominacion": "Harina",
+            "precioVenta": 60.5,
+            "imagenes": [
+              {
+                "id": 2,
+                "url": "https://mandolina.co/wp-content/uploads/2023/03/648366622-1024x683.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 2,
+              "denominacion": "Gramos"
+            },
+            "precioCompra": 40,
+            "stockActual": 4,
+            "stockMaximo": 40,
+            "esParaElaborar": true
+          }
+        },
+        {
+          "id": 4,
+          "cantidad": 650,
+          "articuloInsumo": {
+            "id": 3,
+            "denominacion": "Queso",
+            "precioVenta": 66.6,
+            "imagenes": [
+              {
+                "id": 3,
+                "url": "https://superdepaso.com.ar/wp-content/uploads/2021/06/SANTAROSA-PATEGRAS-04.jpg"
+              }
+            ],
+            "unidadMedida": {
+              "id": 2,
+              "denominacion": "Gramos"
+            },
+            "precioCompra": 23.6,
+            "stockActual": 20,
+            "stockMaximo": 50,
+            "esParaElaborar": true
+          }
+        }
+      ]
+    }
+  ],
+  "articulosInsumos": [
+    {
+      "id": 1,
+      "denominacion": "Coca cola",
+      "precioVenta": 70,
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+        }
+      ],
+      "unidadMedida": {
+        "id": 1,
+        "denominacion": "Litros"
+      },
+      "precioCompra": 50,
+      "stockActual": 5,
+      "stockMaximo": 50,
+      "esParaElaborar": false
+    },
+    {
+      "id": 2,
+      "denominacion": "Harina",
+      "precioVenta": 60.5,
+      "imagenes": [
+        {
+          "id": 2,
+          "url": "https://mandolina.co/wp-content/uploads/2023/03/648366622-1024x683.jpg"
+        }
+      ],
+      "unidadMedida": {
+        "id": 2,
+        "denominacion": "Gramos"
+      },
+      "precioCompra": 40,
+      "stockActual": 4,
+      "stockMaximo": 40,
+      "esParaElaborar": true
+    },
+    {
+      "id": 3,
+      "denominacion": "Queso",
+      "precioVenta": 66.6,
+      "imagenes": [
+        {
+          "id": 3,
+          "url": "https://superdepaso.com.ar/wp-content/uploads/2021/06/SANTAROSA-PATEGRAS-04.jpg"
+        }
+      ],
+      "unidadMedida": {
+        "id": 2,
+        "denominacion": "Gramos"
+      },
+      "precioCompra": 23.6,
+      "stockActual": 20,
+      "stockMaximo": 50,
+      "esParaElaborar": true
+    },
+    {
+      "id": 4,
+      "denominacion": "Tomate",
+      "precioVenta": 66.6,
+      "imagenes": [
+        {
+          "id": 4,
+          "url": "https://thefoodtech.com/wp-content/uploads/2020/06/Componentes-de-calidad-en-el-tomate-828x548.jpg"
+        }
+      ],
+      "unidadMedida": {
+        "id": 3,
+        "denominacion": "Cantidad"
+      },
+      "precioCompra": 23.6,
+      "stockActual": 20,
+      "stockMaximo": 50,
+      "esParaElaborar": true
+    },
+    {
+      "id": 5,
+      "denominacion": "Lechuga",
+      "precioVenta": 29,
+      "precioCompra": 14,
+      "imagenes": [
+        {
+          "url": "https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ],
+      "unidadMedida": {
+        "id": 0,
+        "denominacion": ""
+      },
+      "stockActual": 18,
+      "stockMaximo": 20,
+      "stockMinimo": 5,
+      "esParaElaborar": true
+    }
+  ],
+
+  "domicilios": [
+    {
+      "id": 1,
+      "calle": "Viamonte",
+      "numero": 500,
+      "cp": 5509,
+      "piso": 2,
+      "nroDpto": 23,
+      "localidad": {
+        "id": 1,
+        "nombre": "Lujan de Cuyo",
+        "provincia": {
+          "id": 1,
+          "nombre": "Mendoza",
+          "pais": {
+            "id": 1,
+            "nombre": "Argentina"
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "calle": "San Martin",
+      "numero": 789,
+      "cp": 5511,
+      "piso": null,
+      "nroDpto": null,
+      "localidad": {
+        "id": 2,
+        "nombre": "Godoy Cruz",
+        "provincia": {
+          "id": 1,
+          "nombre": "Mendoza",
+          "pais": {
+            "id": 1,
+            "nombre": "Argentina"
+          }
+        }
+      }
+    }
+  ],
+  "paises": [
+    {
+      "id": 1,
+      "nombre": "Argentina"
+    },
+    {
+      "id": 2,
+      "nombre": "Estados Unidos"
+    },
+    {
+      "id": 3,
+      "nombre": "Brasil"
+    },
+    {
+      "id": 4,
+      "nombre": "Canadá"
+    },
+    {
+      "id": 5,
+      "nombre": "Francia"
+    },
+    {
+      "id": 6,
+      "nombre": "Alemania"
+    },
+    {
+      "id": 7,
+      "nombre": "Japón"
+    }
+  ],
+  "provincias": [
+    {
+      "id": 1,
+      "nombre": "Mendoza",
+      "pais": {
+        "id": 1,
+        "nombre": "Argentina"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Cordoba",
+      "pais": {
+        "id": 1,
+        "nombre": "Argentina"
+      }
+    }
+  ],
+  "localidades": [
+    {
+      "id": 1,
+      "nombre": "Lujan de Cuyo",
+      "provincia": {
+        "id": 1,
+        "nombre": "Mendoza",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Godoy Cruz",
+      "provincia": {
+        "id": 1,
+        "nombre": "Mendoza",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Achiras",
+      "provincia": {
+        "id": 2,
+        "nombre": "Cordoba",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Agua de Oro",
+      "provincia": {
+        "id": 2,
+        "nombre": "Cordoba",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "San Rafael",
+      "provincia": {
+        "id": 2,
+        "nombre": "Mendoza",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "San Martín",
+      "provincia": {
+        "id": 2,
+        "nombre": "Mendoza",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "Villa Carlos Paz",
+      "provincia": {
+        "id": 2,
+        "nombre": "Cordoba",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Capilla del Monte",
+      "provincia": {
+        "id": 2,
+        "nombre": "Cordoba",
+        "pais": {
+          "id": 1,
+          "nombre": "Argentina"
+        }
+      }
+    }
+  ],
+  "unidadesMedidas": [
+    {
+      "id": 1,
+      "denominacion": "Litros"
+    },
+    {
+      "id": 2,
+      "denominacion": "Gramos"
+    },
+    {
+      "id": 3,
+      "denominacion": "Cantidad"
+    },
+    {
+      "id": 4,
+      "denominacion": "Porciones"
+    }
   ]
 }
