@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Dashboard Buen Sabor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
+Este proyecto es un dashboard para la gestión de un negocio de alimentos llamado "Buen Sabor".
 
-Currently, two official plugins are available:
+## Instalación y Ejecución
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Clona este repositorio: git clone https://github.com/SAlvarezBulfon/Dashboard-Buen-Sabor.git
 
-## Expanding the ESLint configuration
+### Instala las dependencias:
+- npm install
+### Ejecuta el proyecto:
+- npm run dev
+### Ejecuta json-server en otra terminal para simular una API:
+- json-server --watch db.json
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Características
+- Incluye productos, insumos, categorías y promociones.
+- Estadísticas.
+- Organización, búsqueda y paginación en tablas.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tecnologías Utilizadas
+- React
+- Material-UI
+- TypeScript
+- CoreUI
