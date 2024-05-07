@@ -9,7 +9,7 @@ import Column from "../../../types/Column";
 import Empresa from "../../../types/Empresa";
 import { Link } from "react-router-dom";
 import { toggleModal } from "../../../redux/slices/ModalReducer";
-import { handleSearch } from "../../../utils/utils";
+import { handleSearch, onDelete } from "../../../utils/utils";
 import SearchBar from "../../ui/common/SearchBar/SearchBar";
 import TableComponent from "../../ui/Table/Table";
 import { ModalEmpresa } from "../../ui/Modals/ModalEmpresa";
@@ -42,10 +42,20 @@ const EmpresaComponent = () => {
     handleSearch(query, globalEmpresas, 'nombre', setFilteredData);
   };
   
-  const onDelete = async (empresa: Empresa) => {
+  const onDeleteEmpresa = async (empresa: Empresa) => {
     try {
-      console.log("Eliminando empresa con ID", empresa.id);
-      // Lógica para eliminar la empresa con el ID proporcionado
+      await onDelete(
+        empresa,
+        async (empresaToDelete: Empresa) => {
+          await empresaService.delete(url + '/empresas', empresaToDelete.id.toString());
+        },
+        fetchEmpresas,
+        () => {
+        },
+        (error: any) => {
+          console.error("Error al eliminar empresa:", error);
+        }
+      );
     } catch (error) {
       console.error("Error al eliminar empresa:", error);
     }
@@ -115,7 +125,7 @@ const EmpresaComponent = () => {
         <Box sx={{mt:2 }}>
           <SearchBar onSearch={onSearch} />
         </Box>
-        <TableComponent data={filteredData} columns={columns} onDelete={onDelete} onEdit={handleEdit} />
+        <TableComponent data={filteredData} columns={columns} onDelete={onDeleteEmpresa} onEdit={handleEdit} />
         <ModalEmpresa getEmpresas={fetchEmpresas} />
       </Container>
     </Box>

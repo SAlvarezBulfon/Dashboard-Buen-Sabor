@@ -603,8 +603,22 @@
     {
       "id": 3,
       "nombre": "Empresa A",
-      "razonSocial": "Razón Social A",
-      "cuil": "27446629285",
+      "razonSocial": "Razon Social A",
+      "cuil": "12345678911",
+      "sucursales": []
+    },
+    {
+      "id": 4,
+      "nombre": "Empresa B ",
+      "razonSocial": "Razon Social B",
+      "cuil": "12347829765",
+      "sucursales": []
+    },
+    {
+      "id": 5,
+      "nombre": "Empresa C",
+      "razonSocial": "Razon Social C",
+      "cuil": "87652918271",
       "sucursales": []
     }
   ]
