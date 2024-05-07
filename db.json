@@ -1,0 +1,611 @@
+{
+  "empresas": [
+    {
+      "id": 1,
+      "nombre": "Lo de Brown",
+      "razonSocial": "Venta de Alimentos",
+      "cuil": 30503167,
+      "sucursales": [
+        {
+          "id": 1,
+          "nombre": "En chacras",
+          "horarioApertura": "17:00:00",
+          "horarioCierre": "23:00:00",
+          "domicilio": {
+            "id": 1,
+            "calle": "Viamonte",
+            "numero": 500,
+            "cp": 5509,
+            "piso": 2,
+            "nroDpto": 23,
+            "localidad": {
+              "id": 1,
+              "nombre": "Lujan de Cuyo",
+              "provincia": {
+                "id": 1,
+                "nombre": "Mendoza",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          },
+          "categorias": [
+            {
+              "id": 1,
+              "denominacion": "Bebidas",
+              "articulos": [],
+              "subCategorias": [
+                {
+                  "id": 3,
+                  "denominacion": "Tragos",
+                  "articulos": [],
+                  "subCategorias": []
+                },
+                {
+                  "id": 2,
+                  "denominacion": "Gaseosas",
+                  "articulos": [
+                    {
+                      "id": 1,
+                      "denominacion": "Coca cola",
+                      "precioVenta": 70,
+                      "imagenes": [
+                        {
+                          "id": 1,
+                          "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                        }
+                      ],
+                      "unidadMedida": {
+                        "id": 1,
+                        "denominacion": "Litros"
+                      }
+                    }
+                  ],
+                  "subCategorias": []
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "denominacion": "Pizzas",
+              "articulos": [
+                {
+                  "id": 5,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 130,
+                  "imagenes": [
+                    {
+                      "id": 5,
+                      "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                },
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                }
+              ],
+              "subCategorias": []
+            }
+          ],
+          "promociones": [
+            {
+              "id": 1,
+              "denominacion": "Dia de los Enamorados",
+              "fechaDesde": "2024-02-13",
+              "fechaHasta": "2024-02-15",
+              "horaDesde": "00:00:00",
+              "horaHasta": "23:59:00",
+              "descripcionDescuento": "El descuento que se hace por San Valentin, un día antes y un día después",
+              "precioPromocional": 100,
+              "tipoPromocion": "promoción",
+              "articulos": [
+                {
+                  "id": 1,
+                  "denominacion": "Coca cola",
+                  "precioVenta": 70,
+                  "imagenes": [
+                    {
+                      "id": 1,
+                      "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 1,
+                    "denominacion": "Litros"
+                  }
+                },
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                }
+              ],
+              "imagenes": []
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "nombre": "En Godoy Cruz ",
+          "horarioApertura": "16:00:00",
+          "horarioCierre": "23:30:00",
+          "domicilio": {
+            "id": 2,
+            "calle": "San Martin",
+            "numero": 789,
+            "cp": 5511,
+            "piso": null,
+            "nroDpto": null,
+            "localidad": {
+              "id": 2,
+              "nombre": "Godoy Cruz",
+              "provincia": {
+                "id": 1,
+                "nombre": "Mendoza",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          },
+          "categorias": [
+            {
+              "id": 1,
+              "denominacion": "Bebidas",
+              "articulos": [],
+              "subCategorias": [
+                {
+                  "id": 3,
+                  "denominacion": "Tragos",
+                  "articulos": [],
+                  "subCategorias": []
+                },
+                {
+                  "id": 2,
+                  "denominacion": "Gaseosas",
+                  "articulos": [
+                    {
+                      "id": 1,
+                      "denominacion": "Coca cola",
+                      "precioVenta": 70,
+                      "imagenes": [
+                        {
+                          "id": 1,
+                          "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                        }
+                      ],
+                      "unidadMedida": {
+                        "id": 1,
+                        "denominacion": "Litros"
+                      }
+                    }
+                  ],
+                  "subCategorias": []
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "denominacion": "Pizzas",
+              "articulos": [
+                {
+                  "id": 5,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 130,
+                  "imagenes": [
+                    {
+                      "id": 5,
+                      "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                },
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                }
+              ],
+              "subCategorias": []
+            }
+          ],
+          "promociones": [
+            {
+              "id": 2,
+              "denominacion": "Combo Pizza",
+              "fechaDesde": "2024-04-25",
+              "fechaHasta": "2024-05-05",
+              "horaDesde": "00:00:00",
+              "horaHasta": "23:59:00",
+              "descripcionDescuento": "¡Disfruta de un combo especial de pizza!",
+              "precioPromocional": 180,
+              "tipoPromocion": "combo",
+              "articulos": [
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                },
+                {
+                  "id": 1,
+                  "denominacion": "Coca cola",
+                  "precioVenta": 70,
+                  "imagenes": [
+                    {
+                      "id": 1,
+                      "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 1,
+                    "denominacion": "Litros"
+                  }
+                }
+              ],
+              "imagenes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Chachingo",
+      "razonSocial": "Venta de Alimentos",
+      "cuil": 30503167,
+      "sucursales": [
+        {
+          "id": 1,
+          "nombre": "En Lujan de cuyo",
+          "horarioApertura": "17:00:00",
+          "horarioCierre": "23:00:00",
+          "domicilio": {
+            "id": 1,
+            "calle": "Viamonte",
+            "numero": 500,
+            "cp": 5509,
+            "piso": 2,
+            "nroDpto": 23,
+            "localidad": {
+              "id": 1,
+              "nombre": "Lujan de Cuyo",
+              "provincia": {
+                "id": 1,
+                "nombre": "Mendoza",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          },
+          "categorias": [
+            {
+              "id": 1,
+              "denominacion": "Bebidas",
+              "articulos": [],
+              "subCategorias": [
+                {
+                  "id": 3,
+                  "denominacion": "Tragos",
+                  "articulos": [],
+                  "subCategorias": []
+                },
+                {
+                  "id": 2,
+                  "denominacion": "Gaseosas",
+                  "articulos": [
+                    {
+                      "id": 1,
+                      "denominacion": "Coca cola",
+                      "precioVenta": 70,
+                      "imagenes": [
+                        {
+                          "id": 1,
+                          "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                        }
+                      ],
+                      "unidadMedida": {
+                        "id": 1,
+                        "denominacion": "Litros"
+                      }
+                    }
+                  ],
+                  "subCategorias": []
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "denominacion": "Pizzas",
+              "articulos": [
+                {
+                  "id": 5,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 130,
+                  "imagenes": [
+                    {
+                      "id": 5,
+                      "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                },
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                }
+              ],
+              "subCategorias": []
+            }
+          ],
+          "promociones": [
+            {
+              "id": 1,
+              "denominacion": "Dia de los Enamorados",
+              "fechaDesde": "2024-02-13",
+              "fechaHasta": "2024-02-15",
+              "horaDesde": "00:00:00",
+              "horaHasta": "23:59:00",
+              "descripcionDescuento": "El descuento que se hace por San Valentin, un día antes y un día después",
+              "precioPromocional": 100,
+              "tipoPromocion": "promoción",
+              "articulos": [
+                {
+                  "id": 1,
+                  "denominacion": "Coca cola",
+                  "precioVenta": 70,
+                  "imagenes": [
+                    {
+                      "id": 1,
+                      "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 1,
+                    "denominacion": "Litros"
+                  }
+                },
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                }
+              ],
+              "imagenes": []
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "nombre": "En Maipu ",
+          "horarioApertura": "16:00:00",
+          "horarioCierre": "23:30:00",
+          "domicilio": {
+            "id": 2,
+            "calle": "San Martin",
+            "numero": 789,
+            "cp": 5511,
+            "piso": null,
+            "nroDpto": null,
+            "localidad": {
+              "id": 2,
+              "nombre": "Godoy Cruz",
+              "provincia": {
+                "id": 1,
+                "nombre": "Mendoza",
+                "pais": {
+                  "id": 1,
+                  "nombre": "Argentina"
+                }
+              }
+            }
+          },
+          "categorias": [
+            {
+              "id": 1,
+              "denominacion": "Bebidas",
+              "articulos": [],
+              "subCategorias": [
+                {
+                  "id": 3,
+                  "denominacion": "Tragos",
+                  "articulos": [],
+                  "subCategorias": []
+                },
+                {
+                  "id": 2,
+                  "denominacion": "Gaseosas",
+                  "articulos": [
+                    {
+                      "id": 1,
+                      "denominacion": "Coca cola",
+                      "precioVenta": 70,
+                      "imagenes": [
+                        {
+                          "id": 1,
+                          "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                        }
+                      ],
+                      "unidadMedida": {
+                        "id": 1,
+                        "denominacion": "Litros"
+                      }
+                    }
+                  ],
+                  "subCategorias": []
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "denominacion": "Pizzas",
+              "articulos": [
+                {
+                  "id": 5,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 130,
+                  "imagenes": [
+                    {
+                      "id": 5,
+                      "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                },
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                }
+              ],
+              "subCategorias": []
+            }
+          ],
+          "promociones": [
+            {
+              "id": 2,
+              "denominacion": "Combo Pizza",
+              "fechaDesde": "2024-04-25",
+              "fechaHasta": "2024-05-05",
+              "horaDesde": "00:00:00",
+              "horaHasta": "23:59:00",
+              "descripcionDescuento": "¡Disfruta de un combo especial de pizza!",
+              "precioPromocional": 180,
+              "tipoPromocion": "combo",
+              "articulos": [
+                {
+                  "id": 6,
+                  "denominacion": "Pizza Muzarella",
+                  "precioVenta": 150,
+                  "imagenes": [
+                    {
+                      "id": 6,
+                      "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 4,
+                    "denominacion": "Porciones"
+                  }
+                },
+                {
+                  "id": 1,
+                  "denominacion": "Coca cola",
+                  "precioVenta": 70,
+                  "imagenes": [
+                    {
+                      "id": 1,
+                      "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
+                    }
+                  ],
+                  "unidadMedida": {
+                    "id": 1,
+                    "denominacion": "Litros"
+                  }
+                }
+              ],
+              "imagenes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Empresa A",
+      "razonSocial": "Razón Social A",
+      "cuil": "27446629285",
+      "sucursales": []
+    }
+  ]
+}
