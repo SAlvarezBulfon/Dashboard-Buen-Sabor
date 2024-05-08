@@ -620,6 +620,13 @@
       "razonSocial": "Razón Social C",
       "cuil": 12345212122,
       "sucursales": []
+    },
+    {
+      "id": 6,
+      "nombre": "Empresa D",
+      "razonSocial": "Razón Social D",
+      "cuil": 98765411111,
+      "sucursales": []
     }
   ],
   "promociones": [

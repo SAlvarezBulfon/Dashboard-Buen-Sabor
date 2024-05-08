@@ -1,9 +1,7 @@
 import React from 'react';
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
 import GenericModal from './GenericModal'; 
 import TextFieldValue from '../TextFieldValue/TextFieldValue'; 
-import { toggleModal } from '../../../redux/slices/ModalReducer';
 import EmpresaService from '../../../services/EmpresaService'; 
 import Empresa from '../../../types/Empresa'; 
 
@@ -24,7 +22,7 @@ const ModalEmpresa: React.FC<ModalEmpresaProps> = ({
   getEmpresas,
   empresaAEditar,
 }) => {
-  const dispatch = useDispatch(); // Hook useDispatch para despachar acciones
+
   const empresaService = new EmpresaService(); // Instancia del servicio de empresa
   const URL = import.meta.env.VITE_API_URL; // URL de la API
 
@@ -38,10 +36,7 @@ const ModalEmpresa: React.FC<ModalEmpresaProps> = ({
       .required('Campo requerido'), // Campo CUIL requerido
   });
 
-  // Función para cerrar el modal
-  const handleClose = () => {
-    dispatch(toggleModal({ modalName })); // Despacha la acción para cerrar el modal
-  };
+
 
   // Función para manejar el envío del formulario
   const handleSubmit = async (values: Empresa) => {
@@ -52,7 +47,6 @@ const ModalEmpresa: React.FC<ModalEmpresaProps> = ({
         await empresaService.post(`${URL}/empresas`, values); // Agrega una nueva empresa si no está en modo de edición
       }
       getEmpresas(); // Actualiza la lista de empresas
-      handleClose(); // Cierra el modal después de enviar los datos
     } catch (error) {
       console.error('Error al enviar los datos:', error); // Manejo de errores
     }
