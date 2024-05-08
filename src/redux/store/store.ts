@@ -6,6 +6,7 @@ import ProductoReducer from '../slices/ProductoReducer'
 import PromocionReducer from '../slices/PromocionReducer'
 import InsumoReducer from '../slices/InsumoReducer'
 import CategoriaReducer from '../slices/CategoriaReducer'
+import UnidadMedidaReducer from '../slices/UnidadMedidaReducer'
 
 
 export const store = configureStore({
@@ -17,6 +18,7 @@ export const store = configureStore({
     promocion: PromocionReducer,
     insumo: InsumoReducer,
     categoria: CategoriaReducer,
+    unidadMedida: UnidadMedidaReducer,
   },
 })
 
