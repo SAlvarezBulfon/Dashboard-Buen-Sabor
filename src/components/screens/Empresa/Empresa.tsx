@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box, Typography, Button, Container, Tooltip, IconButton } from "@mui/material";
-import { Add, Visibility, AddCircle } from "@mui/icons-material"; // Importamos los iconos adecuados
+import { Add, Visibility, AddCircle } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { setEmpresa } from "../../../redux/slices/EmpresaReducer";
 
@@ -12,7 +12,7 @@ import { toggleModal } from "../../../redux/slices/ModalReducer";
 import { handleSearch, onDelete } from "../../../utils/utils";
 import SearchBar from "../../ui/common/SearchBar/SearchBar";
 import TableComponent from "../../ui/Table/Table";
-import { ModalEmpresa } from "../../ui/Modals/ModalEmpresa";
+import ModalEmpresa from "../../ui/Modals/ModalEmpresa";
 
 const EmpresaComponent = () => {
   const url = import.meta.env.VITE_API_URL;
@@ -23,6 +23,8 @@ const EmpresaComponent = () => {
   );
 
   const [filteredData, setFilteredData] = useState<Empresa[]>([]);
+  const [isEditing, setIsEditing] = useState(false); 
+  const [empresaEditar, setEmpresaEditar] = useState<Empresa>();
 
   const fetchEmpresas = async () => {
     try {
@@ -61,12 +63,14 @@ const EmpresaComponent = () => {
     }
   };
   
-  const handleEdit = (id: number) => {
-    console.log("Editar empresa con ID", id);
-    // Lógica para editar la empresa con el ID proporcionado
+  const handleEdit = (empresa: Empresa) => {
+    setIsEditing(true); 
+    setEmpresaEditar(empresa)
+    dispatch(toggleModal({ modalName: "modal" }));
   };
   
   const handleAddEmpresa = () => {
+    setIsEditing(false); 
     dispatch(toggleModal({ modalName: "modal" }));
   };
 
@@ -80,7 +84,6 @@ const EmpresaComponent = () => {
       renderCell: (empresa) => (
         <>
         <Tooltip title="Ver Sucursales">
-          {/* Verificar si la empresa tiene sucursales */}
           {empresa.sucursales.length > 0 ? (
             <IconButton component={Link} to={`/empresas/${empresa.id}`} aria-label="Ver Sucursales">
               <Visibility />
@@ -126,10 +129,12 @@ const EmpresaComponent = () => {
           <SearchBar onSearch={onSearch} />
         </Box>
         <TableComponent data={filteredData} columns={columns} onDelete={onDeleteEmpresa} onEdit={handleEdit} />
-        <ModalEmpresa getEmpresas={fetchEmpresas} />
+        <ModalEmpresa modalName="modal" initialValues={empresaEditar || {id: 0, nombre: "", razonSocial: "", cuil: 0, sucursales: [] }} isEditMode={isEditing} getEmpresas={fetchEmpresas} />
       </Container>
     </Box>
   );
 };
 
 export default EmpresaComponent;
+
+

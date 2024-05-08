@@ -1,93 +1,90 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import IEmpresa from '../../../types/Empresa';
-import { removeElementActive } from '../../../redux/slices/TablaReducer';
+import { useDispatch } from 'react-redux';
+import GenericModal from './GenericModal'; 
+import TextFieldValue from '../TextFieldValue/TextFieldValue'; 
 import { toggleModal } from '../../../redux/slices/ModalReducer';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import EmpresaService from '../../../services/EmpresaService';
-import TextFieldValue from '../TextFieldValue/TextFieldValue';
+import EmpresaService from '../../../services/EmpresaService'; 
+import Empresa from '../../../types/Empresa'; 
 
-interface IModalEmpresa {
-  getEmpresas: Function;
+// Define las props del componente de modal de empresa
+interface ModalEmpresaProps {
+  modalName: string; // Nombre del modal
+  initialValues: Empresa; // Valores iniciales del formulario
+  isEditMode: boolean; // Indicador de modo de edición
+  getEmpresas: Function; // Función para obtener empresas
+  empresaAEditar?: Empresa; // Empresa a editar
 }
 
-export const ModalEmpresa: React.FC<IModalEmpresa> = ({ getEmpresas }) => {
-  const initialValues: IEmpresa = {
-    id: 0,
-    nombre: '',
-    razonSocial: '',
-    cuil: 0,
-    sucursales: []
-  };
+// Componente de modal de empresa
+const ModalEmpresa: React.FC<ModalEmpresaProps> = ({
+  modalName,
+  initialValues,
+  isEditMode,
+  getEmpresas,
+  empresaAEditar,
+}) => {
+  const dispatch = useDispatch(); // Hook useDispatch para despachar acciones
+  const empresaService = new EmpresaService(); // Instancia del servicio de empresa
+  const URL = import.meta.env.VITE_API_URL; // URL de la API
 
-  const apiEmpresa = new EmpresaService();
-  const modal = useAppSelector((state) => state.modal.modal);
-  const elementActive = useAppSelector((state) => state.tabla.elementActive);
-  const dispatch = useAppDispatch();
-  const URL = import.meta.env.VITE_API_URL;
+  // Esquema de validación con Yup
+  const validationSchema = Yup.object().shape({
+    nombre: Yup.string().required('Campo requerido'), // Campo nombre requerido
+    razonSocial: Yup.string().required('Campo requerido'), // Campo razón social requerido
+    cuil: Yup.string()
+      .matches(/^[0-9]+$/, 'CUIL inválido. Solo se permiten números.') // CUIL solo números
+      .matches(/^\d{11}$/, 'CUIL inválido. Debe tener 11 dígitos.') // CUIL debe tener 11 dígitos
+      .required('Campo requerido'), // Campo CUIL requerido
+  });
 
+  // Función para cerrar el modal
   const handleClose = () => {
-    dispatch(toggleModal({ modalName: 'modal' }));
-    dispatch(removeElementActive());
+    dispatch(toggleModal({ modalName })); // Despacha la acción para cerrar el modal
   };
 
+  // Función para manejar el envío del formulario
+  const handleSubmit = async (values: Empresa) => {
+    try {
+      if (isEditMode) {
+        await empresaService.put(`${URL}/empresas`, values.id.toString(), values); // Actualiza la empresa si está en modo de edición
+      } else {
+        await empresaService.post(`${URL}/empresas`, values); // Agrega una nueva empresa si no está en modo de edición
+      }
+      getEmpresas(); // Actualiza la lista de empresas
+      handleClose(); // Cierra el modal después de enviar los datos
+    } catch (error) {
+      console.error('Error al enviar los datos:', error); // Manejo de errores
+    }
+  };
+
+  // Si no está en modo de edición, se limpian los valores iniciales
+  if (!isEditMode) {
+    initialValues = {
+      id: 0,
+      nombre: '',
+      razonSocial: '',
+      cuil: 0,
+      sucursales: [],
+    };
+  }
+
+  // Renderiza el componente de modal genérico
   return (
-    <div>
-      <Modal id={'modalEmpresa'} show={modal} onHide={handleClose} size={'lg'} backdrop="static" keyboard={false}>
-        <Modal.Header closeButton>
-          {elementActive ? <Modal.Title>Editar una empresa:</Modal.Title> : <Modal.Title>Añadir una empresa:</Modal.Title>}
-        </Modal.Header>
-        <Modal.Body>
-          <Formik
-            validationSchema={Yup.object({
-              nombre: Yup.string().required('Campo requerido'),
-              razonSocial: Yup.string().required('Campo requerido'),
-              cuil: Yup.string()
-                .matches(/^[0-9]+$/, 'CUIL inválido. Solo se permiten números.')
-                .matches(/^\d{11}$/, 'CUIL inválido. Debe tener 11 dígitos.')
-                .required('Campo requerido'),
-            })}
-            initialValues={elementActive ? elementActive : initialValues}
-            enableReinitialize={true}
-            onSubmit={async (values: IEmpresa) => {
-              try {
-                if (elementActive) {
-                  await apiEmpresa.put(`${URL}/empresas`, elementActive.id, values);
-                } else {
-                  await apiEmpresa.post(`${URL}/empresas`, values);
-                }
-                getEmpresas();
-                handleClose();
-              } catch (error) {
-                console.error('Error al enviar los datos:', error);
-              }
-            }}>
-            {({errors, touched}) => (
-              <>
-                <Form autoComplete="off" className="form-obraAlta">
-                  <div className="container_Form_Ingredientes">
-                    <TextFieldValue label="Nombre" name="nombre" type="text" placeholder="Nombre" />
-                  
-                    
-                    <TextFieldValue label="Razón Social" name="razonSocial" type="text" placeholder="Razón Social" />
-                 
-                    
-                    <TextFieldValue label="CUIL" name="cuil" type="text" placeholder="Ejemplo: 12345678901" />
-                    
-                  </div>
-                  <div className="d-flex justify-content-end">
-                    <Button variant="outline-success" type="submit" disabled={Object.keys(errors).length > 0 && Object.keys(touched).length > 0}>
-                      Enviar
-                    </Button>
-                  </div>
-                </Form>
-              </>
-            )}
-          </Formik>
-        </Modal.Body>
-      </Modal>
-    </div>
+    <GenericModal
+      modalName={modalName}
+      title={isEditMode ? 'Editar Empresa' : 'Añadir Empresa'}
+      initialValues={empresaAEditar || initialValues} // Usa la empresa a editar si está disponible, de lo contrario, usa los valores iniciales
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+      isEditMode={isEditMode}
+    >
+      {/* Campos del formulario */}
+      <TextFieldValue label="Nombre" name="nombre" type="text" placeholder="Nombre" />
+      <TextFieldValue label="Razón Social" name="razonSocial" type="text" placeholder="Razón Social" />
+      <TextFieldValue label="CUIL" name="cuil" type="number" placeholder="Ejemplo: 12345678901" />
+    </GenericModal>
   );
 };
+
+export default ModalEmpresa; // Exporta el componente ModalEmpresa

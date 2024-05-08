@@ -611,18 +611,17 @@
       "id": 4,
       "nombre": "Empresa B ",
       "razonSocial": "Razon Social B",
-      "cuil": "12347829765",
+      "cuil": 12347829768,
       "sucursales": []
     },
     {
       "id": 5,
       "nombre": "Empresa C",
-      "razonSocial": "Razon Social C",
-      "cuil": "87652918271",
+      "razonSocial": "Razón Social C",
+      "cuil": 12345212122,
       "sucursales": []
     }
   ],
-
   "promociones": [
     {
       "id": 1,
@@ -1598,7 +1597,6 @@
       "esParaElaborar": true
     }
   ],
-
   "domicilios": [
     {
       "id": 1,

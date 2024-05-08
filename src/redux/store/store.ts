@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import EmpresaReducer from '../slices/EmpresaReducer'
 import ModalReducer from '../slices/ModalReducer'
 import SucursalReducer from '../slices/SucursalReducer'
-import TablaReducer from '../slices/TablaReducer'
 import ProductoReducer from '../slices/ProductoReducer'
 import PromocionReducer from '../slices/PromocionReducer'
 import InsumoReducer from '../slices/InsumoReducer'
@@ -14,7 +13,6 @@ export const store = configureStore({
     empresa: EmpresaReducer,
     modal: ModalReducer,
     sucursal: SucursalReducer,
-    tabla: TablaReducer,
     producto: ProductoReducer,
     promocion: PromocionReducer,
     insumo: InsumoReducer,
