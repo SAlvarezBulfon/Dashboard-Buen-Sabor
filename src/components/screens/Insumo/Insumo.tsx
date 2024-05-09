@@ -11,6 +11,8 @@ import Column from "../../../types/Column";
 import { Add } from "@mui/icons-material";
 import SearchBar from "../../ui/common/SearchBar/SearchBar";
 import TableComponent from "../../ui/Table/Table";
+import ModalInsumo from "../../ui/Modals/ModalInsumo";
+import { toggleModal } from "../../../redux/slices/ModalReducer";
 
 
 const Insumo = () => {
@@ -19,14 +21,14 @@ const Insumo = () => {
   const url = import.meta.env.VITE_API_URL;
   const insumoService = new InsumoService();
   const [filteredData, setFilteredData] = useState<Row[]>([]);
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedArticle, setSelectedArticle] = useState<IArticuloInsumo | null>(null);
+  const [insumoEditar, setInsumoEditar] = useState<IArticuloInsumo>();
+  const [isEditing, setIsEditing] = useState(false);
 
   const fetchArticulosInsumos = async () => {
     try {
       const articulosInsumos = await insumoService.getAll(url + '/articulosInsumos');
-      dispatch(setInsumo(articulosInsumos)); 
-      setFilteredData(articulosInsumos); 
+      dispatch(setInsumo(articulosInsumos));
+      setFilteredData(articulosInsumos);
     } catch (error) {
       console.error("Error al obtener los artículos de insumo:", error);
     }
@@ -34,7 +36,7 @@ const Insumo = () => {
 
   useEffect(() => {
     fetchArticulosInsumos();
-  }, [dispatch]); 
+  }, [dispatch]);
 
   const onSearch = (query: string) => {
     handleSearch(query, globalArticulosInsumos, 'denominacion', setFilteredData);
@@ -59,10 +61,16 @@ const Insumo = () => {
     }
   };
 
-  const handleEdit = (index: number) => {
-    const selectedArticle = filteredData[index] as IArticuloInsumo;
-    setSelectedArticle(selectedArticle);
-    setOpenModal(true);
+  const handleEdit = (insumo: IArticuloInsumo) => {
+    setIsEditing(true);
+    setInsumoEditar(insumo)
+    dispatch(toggleModal({ modalName: "modal" }));
+  };
+
+  const handleOpenModal = () => {
+    setInsumoEditar(undefined); // Limpiar cualquier valor previo de insumoEditar
+    setIsEditing(false); // Establecer el modo de edición en false para agregar un nuevo artículo
+    dispatch(toggleModal({ modalName: "modal" }));
   };
 
 
@@ -91,7 +99,7 @@ const Insumo = () => {
   ];
 
   return (
-    <Box component="main" sx={{ flexGrow: 1, my: 10}}>
+    <Box component="main" sx={{ flexGrow: 1, my: 10 }}>
       <Container>
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: 1 }}>
           <Typography variant="h5" gutterBottom>
@@ -106,15 +114,32 @@ const Insumo = () => {
             }}
             variant="contained"
             startIcon={<Add />}
-            onClick={() => setOpenModal(true)}
+            onClick={handleOpenModal}
           >
             Insumo
           </Button>
         </Box>
-        <Box sx={{mt:2 }}>
+        <Box sx={{ mt: 2 }}>
           <SearchBar onSearch={onSearch} />
         </Box>
         <TableComponent data={filteredData} columns={columns} onDelete={onDeleteInsumo} onEdit={handleEdit} />
+        <ModalInsumo
+          modalName="modal"
+          initialValues={{
+            id: insumoEditar ? insumoEditar.id : 0,
+            denominacion: insumoEditar ? insumoEditar.denominacion : "",
+            precioVenta: insumoEditar ? insumoEditar.precioVenta : 0,
+            imagenes: insumoEditar ? [{ id: 0, url: insumoEditar.imagenes.length > 0 ? insumoEditar.imagenes[0].url : '' }] : [{ id: 0, url: '' }],
+            unidadMedida: insumoEditar ? insumoEditar.unidadMedida : { id: 0, denominacion: "" },
+            precioCompra: insumoEditar ? insumoEditar.precioCompra : 0,
+            stockActual: insumoEditar ? insumoEditar.stockActual : 0,
+            stockMaximo: insumoEditar ? insumoEditar.stockMaximo : 0,
+            stockMinimo: insumoEditar ? insumoEditar.stockMinimo : 0,
+            esParaElaborar: insumoEditar ? insumoEditar.esParaElaborar : false,
+          }}
+          isEditMode={isEditing}
+          getInsumos={fetchArticulosInsumos}
+        />
       </Container>
     </Box>
   );

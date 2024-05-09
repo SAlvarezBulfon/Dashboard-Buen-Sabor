@@ -1514,7 +1514,7 @@
       "precioVenta": 70,
       "imagenes": [
         {
-          "id": 1,
+          "id": 0,
           "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
         }
       ],
@@ -1525,6 +1525,7 @@
       "precioCompra": 50,
       "stockActual": 5,
       "stockMaximo": 50,
+      "stockMinimo": 1,
       "esParaElaborar": false
     },
     {
@@ -1588,19 +1589,40 @@
       "id": "5",
       "denominacion": "Lechuga",
       "precioVenta": 29,
-      "precioCompra": 14,
       "imagenes": [
         {
+          "id": 0,
           "url": "https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?q=80&w=1325&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       ],
       "unidadMedida": {
         "id": 0,
-        "denominacion": ""
+        "denominacion": "Cantidad"
       },
+      "precioCompra": 14,
       "stockActual": 18,
       "stockMaximo": 20,
       "stockMinimo": 5,
+      "esParaElaborar": true
+    },
+    {
+      "id": 6,
+      "denominacion": "Papa",
+      "precioVenta": 9,
+      "imagenes": [
+        {
+          "id": 0,
+          "url": "https://images.unsplash.com/photo-1617130094141-532436117aa1?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ],
+      "unidadMedida": {
+        "id": 3,
+        "denominacion": "Cantidad"
+      },
+      "precioCompra": 5,
+      "stockActual": 12,
+      "stockMaximo": 12,
+      "stockMinimo": 11,
       "esParaElaborar": true
     }
   ],
