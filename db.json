@@ -1,10 +1,10 @@
 {
   "empresas": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Lo de Brown",
       "razonSocial": "Venta de Alimentos",
-      "cuil": 30503167,
+      "cuil": 30503169999,
       "sucursales": [
         {
           "id": 1,
@@ -301,10 +301,10 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Chachingo",
       "razonSocial": "Venta de Alimentos",
-      "cuil": 30503167,
+      "cuil": 30503167778,
       "sucursales": [
         {
           "id": 1,
@@ -601,28 +601,28 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Empresa A",
       "razonSocial": "Razon Social A",
       "cuil": "12345678911",
       "sucursales": []
     },
     {
-      "id": 4,
-      "nombre": "Empresa B ",
+      "id": "4",
+      "nombre": "Empresa f",
       "razonSocial": "Razon Social B",
       "cuil": 12347829768,
       "sucursales": []
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Empresa C",
       "razonSocial": "Razón Social C",
       "cuil": 12345212122,
       "sucursales": []
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Empresa D",
       "razonSocial": "Razón Social D",
       "cuil": 98765411111,
@@ -631,7 +631,7 @@
   ],
   "promociones": [
     {
-      "id": 1,
+      "id": "1",
       "denominacion": "Dia de los Enamorados",
       "fechaDesde": "2024-02-13",
       "fechaHasta": "2024-02-15",
@@ -680,7 +680,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "denominacion": "Combo Pizza",
       "fechaDesde": "2024-04-25",
       "fechaHasta": "2024-05-05",
@@ -731,7 +731,7 @@
   ],
   "pedidos": [
     {
-      "id": 1,
+      "id": "1",
       "horaEstimadaFinalizacion": "14:45:53.474",
       "total": 300,
       "totalCosto": 170.6,
@@ -952,38 +952,38 @@
   ],
   "imagenes": [
     {
-      "id": 1,
+      "id": "1",
       "url": "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "url": "https://mandolina.co/wp-content/uploads/2023/03/648366622-1024x683.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "url": "https://superdepaso.com.ar/wp-content/uploads/2021/06/SANTAROSA-PATEGRAS-04.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "url": "https://thefoodtech.com/wp-content/uploads/2020/06/Componentes-de-calidad-en-el-tomate-828x548.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "url": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp"
     },
     {
-      "id": 7,
+      "id": "7",
       "url": "https://hips.hearstapps.com/hmg-prod/images/la-la-land-final-1638446140.jpg"
     }
   ],
   "facturas": [],
   "clientes": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Sebastian",
       "apellido": "Wilder",
       "telefono": "2615920825",
@@ -1244,7 +1244,7 @@
   ],
   "categorias": [
     {
-      "id": 1,
+      "id": "1",
       "denominacion": "Bebidas",
       "articulos": [],
       "subCategorias": [
@@ -1279,7 +1279,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "denominacion": "Gaseosas",
       "articulos": [
         {
@@ -1301,13 +1301,13 @@
       "subCategorias": []
     },
     {
-      "id": 3,
+      "id": "3",
       "denominacion": "Tragos",
       "articulos": [],
       "subCategorias": []
     },
     {
-      "id": 4,
+      "id": "4",
       "denominacion": "Pizzas",
       "articulos": [
         {
@@ -1344,7 +1344,7 @@
       "subCategorias": []
     },
     {
-      "id": 6,
+      "id": "6",
       "denominacion": "Hamburguesas",
       "articulos": [],
       "subCategorias": []
@@ -1352,7 +1352,7 @@
   ],
   "articulosManufacturados": [
     {
-      "id": 1,
+      "id": "1",
       "denominacion": "Pizza Muzarella",
       "precioVenta": 130,
       "imagenes": [
@@ -1418,7 +1418,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "denominacion": "Pizza Margarita",
       "precioVenta": 150,
       "imagenes": [
@@ -1509,7 +1509,7 @@
   ],
   "articulosInsumos": [
     {
-      "id": 1,
+      "id": "1",
       "denominacion": "Coca cola",
       "precioVenta": 70,
       "imagenes": [
@@ -1528,7 +1528,7 @@
       "esParaElaborar": false
     },
     {
-      "id": 2,
+      "id": "2",
       "denominacion": "Harina",
       "precioVenta": 60.5,
       "imagenes": [
@@ -1547,7 +1547,7 @@
       "esParaElaborar": true
     },
     {
-      "id": 3,
+      "id": "3",
       "denominacion": "Queso",
       "precioVenta": 66.6,
       "imagenes": [
@@ -1566,7 +1566,7 @@
       "esParaElaborar": true
     },
     {
-      "id": 4,
+      "id": "4",
       "denominacion": "Tomate",
       "precioVenta": 66.6,
       "imagenes": [
@@ -1585,7 +1585,7 @@
       "esParaElaborar": true
     },
     {
-      "id": 5,
+      "id": "5",
       "denominacion": "Lechuga",
       "precioVenta": 29,
       "precioCompra": 14,
@@ -1606,7 +1606,7 @@
   ],
   "domicilios": [
     {
-      "id": 1,
+      "id": "1",
       "calle": "Viamonte",
       "numero": 500,
       "cp": 5509,
@@ -1626,7 +1626,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "calle": "San Martin",
       "numero": 789,
       "cp": 5511,
@@ -1648,37 +1648,37 @@
   ],
   "paises": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Argentina"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Estados Unidos"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Brasil"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Canadá"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Francia"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Alemania"
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "Japón"
     }
   ],
   "provincias": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Mendoza",
       "pais": {
         "id": 1,
@@ -1686,7 +1686,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Cordoba",
       "pais": {
         "id": 1,
@@ -1696,7 +1696,7 @@
   ],
   "localidades": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Lujan de Cuyo",
       "provincia": {
         "id": 1,
@@ -1708,7 +1708,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Godoy Cruz",
       "provincia": {
         "id": 1,
@@ -1720,7 +1720,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Achiras",
       "provincia": {
         "id": 2,
@@ -1732,7 +1732,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Agua de Oro",
       "provincia": {
         "id": 2,
@@ -1744,7 +1744,7 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "San Rafael",
       "provincia": {
         "id": 2,
@@ -1756,7 +1756,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "San Martín",
       "provincia": {
         "id": 2,
@@ -1768,7 +1768,7 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "nombre": "Villa Carlos Paz",
       "provincia": {
         "id": 2,
@@ -1780,7 +1780,7 @@
       }
     },
     {
-      "id": 9,
+      "id": "9",
       "nombre": "Capilla del Monte",
       "provincia": {
         "id": 2,
@@ -1794,19 +1794,19 @@
   ],
   "unidadesMedidas": [
     {
-      "id": 1,
+      "id": "1",
       "denominacion": "Litros"
     },
     {
-      "id": 2,
+      "id": "2",
       "denominacion": "Gramos"
     },
     {
-      "id": 3,
+      "id": "3",
       "denominacion": "Cantidad"
     },
     {
-      "id": 4,
+      "id": "4",
       "denominacion": "Porciones"
     }
   ]
