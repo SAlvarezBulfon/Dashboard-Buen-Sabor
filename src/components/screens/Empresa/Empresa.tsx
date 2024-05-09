@@ -75,7 +75,7 @@ const EmpresaComponent = () => {
     dispatch(toggleModal({ modalName: "modal" }));
   };
 
-  const handleAddSucursal = (empresaId: number) => {
+  const handleAddSucursal = () => {
     dispatch(toggleModal({ modalName: "modalSucursal" })); // Abre el modal de sucursales
   };
   
@@ -101,7 +101,7 @@ const EmpresaComponent = () => {
         </Tooltip>
         <Tooltip title="Agregar Sucursal">
             {/* Cambia el evento onClick para llamar a handleAddSucursal con el ID de la empresa */}
-            <IconButton onClick={() => handleAddSucursal(empresa.id)} aria-label="Agregar Sucursal">
+            <IconButton onClick={handleAddSucursal} aria-label="Agregar Sucursal">
               <AddCircle />
             </IconButton>
           </Tooltip>
