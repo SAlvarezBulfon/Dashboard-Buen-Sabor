@@ -7,7 +7,8 @@ export default interface Sucursal  extends DataModel<Sucursal>{
     nombre: string;
     horarioApertura: string;
     horarioCierre: string;
-    domicilio: Domicilio;
+    domicilio: Domicilio[];
     categorias: Categoria[];
     promociones: Promocion[];
   }
+  

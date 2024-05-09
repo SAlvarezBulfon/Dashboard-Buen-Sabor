@@ -55,20 +55,20 @@ const ModalSucursal: React.FC<ModalSucursalProps> = ({
       } else {
         await sucursalService.post(`${URL}/sucursales`, values);
       }
-      getSucursales();
+      getSucursales(); //Actualiza la lista de sucursales
     } catch (error) {
       console.error('Error al enviar los datos:', error);
     }
   };
 
-  let modalInitialValues = initialValues;
+ 
   if (!isEditMode) {
-    modalInitialValues = {
+    initialValues = {
       id: 0,
       nombre: '',
       horarioApertura: '',
       horarioCierre: '',
-      domicilio: {
+      domicilio:[{ 
         id: 0,
         calle: '',
         numero: 0,
@@ -87,15 +87,18 @@ const ModalSucursal: React.FC<ModalSucursalProps> = ({
             }
           }
         }
-      }
+      }],
+      categorias:[],
+      promociones:[]
     };
+
   }
 
   return (
     <GenericModal
       modalName={modalName}
       title={isEditMode ? 'Editar Sucursal' : 'Añadir Sucursal'}
-      initialValues={sucursalAEditar || modalInitialValues}
+      initialValues={sucursalAEditar || initialValues}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
       isEditMode={isEditMode}

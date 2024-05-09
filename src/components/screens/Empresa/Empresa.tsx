@@ -136,7 +136,7 @@ const EmpresaComponent = () => {
         </Box>
         <TableComponent data={filteredData} columns={columns} onDelete={onDeleteEmpresa} onEdit={handleEdit} />
         <ModalEmpresa modalName="modal" initialValues={empresaEditar || {id: 0, nombre: "", razonSocial: "", cuil: 0, sucursales: [] }} isEditMode={isEditing} getEmpresas={fetchEmpresas} />
-        <ModalSucursal modalName="modalSucursal" initialValues={{id: 0, nombre: "", horarioApertura: "", horarioCierre:"", domicilio: [] }} isEditMode={false} fetchSucursales={fetchEmpresas} />
+        <ModalSucursal modalName="modalSucursal" initialValues={{id: 0, nombre: "", horarioApertura: "", horarioCierre:"", domicilio: [],categorias:[],promociones:[] }} isEditMode={false} getSucursales={fetchEmpresas} />
       </Container>
 
     </Box>

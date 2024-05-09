@@ -7,14 +7,16 @@ import Column from '../../../types/Column';
 import Sucursal from '../../../types/Sucursal';
 import EmpresaService from '../../../services/EmpresaService';
 import { toggleModal } from '../../../redux/slices/ModalReducer';
-import { handleSearch } from '../../../utils/utils';
+import { handleSearch, onDelete } from '../../../utils/utils';
 import SearchBar from '../../ui/common/SearchBar/SearchBar';
 import TableComponent from '../../ui/Table/Table';
 import { setSucursal } from '../../../redux/slices/SucursalReducer';
 import ModalSucursal from '../../ui/Modals/ModalSucursal';
 import SucursalService from '../../../services/SucursalService';
 
-const SucursalesEmpresa: React.FC = () => {
+
+
+const SucursalesEmpresa = () => {
   // Obtener el ID de la empresa de los parámetros de la URL
   const { empresaId } = useParams<{ empresaId: string }>();
   
@@ -24,8 +26,11 @@ const SucursalesEmpresa: React.FC = () => {
   // Dispatch de Redux para actualizar el estado global
   const dispatch = useAppDispatch();
 
-  // Instancia del servicio de la empresa y URL de la API
+  // Instancia del servicio de la empresa 
   const empresaService = new EmpresaService(); 
+  // Instancia del servicio de la sucursal
+  const sucursalService = new SucursalService(); 
+  //URL de la API
   const url = import.meta.env.VITE_API_URL;
 
   // Selector de Redux para obtener las sucursales
@@ -43,7 +48,7 @@ const SucursalesEmpresa: React.FC = () => {
   // Función para obtener las sucursales de la API
   const fetchSucursal = async () => {
     try {
-      const sucursales = await SucursalService.getAll(url + '/sucursales');
+       const sucursales = await sucursalService.getAll(`${url}/sucursales`);
       // Actualizar el estado global de Redux con las sucursales
       dispatch(setSucursal(sucursales)); 
       // Actualizar las sucursales filtradas
@@ -88,10 +93,23 @@ const SucursalesEmpresa: React.FC = () => {
   };
 
   // Función para manejar la eliminación de una sucursal
-  const onDelete = async (index: number) => {
-    // Obtener el ID de la sucursal a eliminar
-    const sucursalId = filteredData[index].id;
-    console.log('Eliminar sucursal con ID:', sucursalId);
+  const onDeleteSucursal = async (sucursal: Sucursal) => {
+    try {
+      await onDelete(
+        sucursal,
+        async (sucursalToDelete: Sucursal) => {
+          sucursalService.delete(url + '/sucursales', sucursalToDelete.id.toString());
+        },
+        fetchSucursal,
+        () => {
+        },
+        (error: any) => {
+          console.error("Error al eliminar sucursal:", error);
+        }
+      );
+    } catch (error) {
+      console.error("Error al eliminar sucursal:", error);
+    }
   };
 
   // Función para manejar la edición de una sucursal
@@ -148,9 +166,9 @@ const SucursalesEmpresa: React.FC = () => {
           <SearchBar onSearch={onSearch} />
         </Box>
         {/* Tabla de sucursales */}
-        <TableComponent data={filteredData} columns={columns} onDelete={onDelete} onEdit={handleEdit} />
+        <TableComponent data={filteredData} columns={columns} onDelete={onDeleteSucursal} onEdit={handleEdit} />
         {/* Modal para editar/agregar sucursal */}
-        <ModalSucursal modalName="modal" initialValues={sucursalEditar || {id: 0, nombre: "", horarioApertura: "",horarioCierre:"0", domicilio: [] }} isEditMode={isEditing} getSucursales={fetchSucursal} />
+        <ModalSucursal modalName="modal" initialValues={sucursalEditar || {id: 0, nombre: "", horarioApertura: "",horarioCierre:"0", domicilio: [], categorias:[], promociones:[] }} isEditMode={isEditing} getSucursales={fetchSucursal} />
       </Container>
     </Box>
   );
