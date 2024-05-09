@@ -13,6 +13,7 @@ import { handleSearch, onDelete } from "../../../utils/utils";
 import SearchBar from "../../ui/common/SearchBar/SearchBar";
 import TableComponent from "../../ui/Table/Table";
 import ModalEmpresa from "../../ui/Modals/ModalEmpresa";
+import ModalSucursal from "../../ui/Modals/ModalSucursal";
 
 const EmpresaComponent = () => {
   const url = import.meta.env.VITE_API_URL;
@@ -74,6 +75,10 @@ const EmpresaComponent = () => {
     dispatch(toggleModal({ modalName: "modal" }));
   };
 
+  const handleAddSucursal = (empresaId: number) => {
+    dispatch(toggleModal({ modalName: "modalSucursal" })); // Abre el modal de sucursales
+  };
+  
   const columns: Column[] = [
     { id: "nombre", label: "Nombre", renderCell: (empresa) => <>{empresa.nombre}</> },
     { id: "razonSocial", label: "Razón Social", renderCell: (empresa) => <>{empresa.razonSocial}</> },
@@ -94,8 +99,9 @@ const EmpresaComponent = () => {
             </IconButton>
           )}
         </Tooltip>
-          <Tooltip title="Agregar Sucursal">
-            <IconButton component={Link} to={`/agregar-sucursal/${empresa.id}`} aria-label="Agregar Sucursal">
+        <Tooltip title="Agregar Sucursal">
+            {/* Cambia el evento onClick para llamar a handleAddSucursal con el ID de la empresa */}
+            <IconButton onClick={() => handleAddSucursal(empresa.id)} aria-label="Agregar Sucursal">
               <AddCircle />
             </IconButton>
           </Tooltip>
@@ -130,7 +136,9 @@ const EmpresaComponent = () => {
         </Box>
         <TableComponent data={filteredData} columns={columns} onDelete={onDeleteEmpresa} onEdit={handleEdit} />
         <ModalEmpresa modalName="modal" initialValues={empresaEditar || {id: 0, nombre: "", razonSocial: "", cuil: 0, sucursales: [] }} isEditMode={isEditing} getEmpresas={fetchEmpresas} />
+        <ModalSucursal modalName="modalSucursal" initialValues={{id: 0, nombre: "", horarioApertura: "", horarioCierre:"", domicilio: [] }} isEditMode={false} fetchSucursales={fetchEmpresas} />
       </Container>
+
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { Box, Typography, Button, Container } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import { useParams } from 'react-router-dom';
@@ -11,39 +11,65 @@ import { handleSearch } from '../../../utils/utils';
 import SearchBar from '../../ui/common/SearchBar/SearchBar';
 import TableComponent from '../../ui/Table/Table';
 import { setSucursal } from '../../../redux/slices/SucursalReducer';
-
-
-
+import ModalSucursal from '../../ui/Modals/ModalSucursal';
+import SucursalService from '../../../services/SucursalService';
 
 const SucursalesEmpresa: React.FC = () => {
+  // Obtener el ID de la empresa de los parámetros de la URL
   const { empresaId } = useParams<{ empresaId: string }>();
-  const [filteredData, setFilteredData] = useState<Sucursal[]>([]);
+  
+  // Estado para almacenar el nombre de la empresa
   const [nombreEmpresa, setNombreEmpresa] = useState<string>('');
+
+  // Dispatch de Redux para actualizar el estado global
   const dispatch = useAppDispatch();
+
+  // Instancia del servicio de la empresa y URL de la API
   const empresaService = new EmpresaService(); 
   const url = import.meta.env.VITE_API_URL;
 
+  // Selector de Redux para obtener las sucursales
+  const sucursalesEmpresa =  useAppSelector((state) => state.sucursal.data);
 
-  const sucursalesEmpresa =  useAppSelector(
-    (state) => state.sucursal.data
-  );
+  // Estado para almacenar las sucursales filtradas
+  const [filteredData, setFilteredData] = useState<Sucursal[]>([]);
 
+  // Estado para controlar si se está editando una sucursal
+  const [isEditing, setIsEditing] = useState(false); 
 
+  // Estado para almacenar la sucursal que se está editando
+  const [sucursalEditar, setSucursalEditar] = useState<Sucursal>();
 
-
+  // Función para obtener las sucursales de la API
+  const fetchSucursal = async () => {
+    try {
+      const sucursales = await SucursalService.getAll(url + '/sucursales');
+      // Actualizar el estado global de Redux con las sucursales
+      dispatch(setSucursal(sucursales)); 
+      // Actualizar las sucursales filtradas
+      setFilteredData(sucursales); 
+    } catch (error) {
+      console.error("Error al obtener las sucursales:", error);
+    }
+  }; 
+  
+  // Efecto para cargar la empresa y las sucursales al montar el componente
   useEffect(() => {
     const fetchEmpresa = async () => {
       try {
         if (empresaId) {
+          // Obtener la información de la empresa de la API
           const empresa = await empresaService.get(`${url}/empresas`, empresaId);
           if (empresa) {
+            // Actualizar el nombre de la empresa
             setNombreEmpresa(empresa.nombre);
-            //Asignamos las sucursales de la empresa al estado global de redux --> importante para el buscador
+            // Actualizar el estado global de Redux con las sucursales de la empresa
             dispatch(setSucursal(empresa.sucursales));
-            setFilteredData(empresa.sucursales); // Actualiza las sucursales directamente desde la información de la empresa
+            // Actualizar las sucursales filtradas
+            setFilteredData(empresa.sucursales);
           } else {
             setNombreEmpresa('');
-            setFilteredData([]); // Limpia las sucursales si no se encuentra la empresa
+            setFilteredData([]);
           }
         }
       } catch (error) {
@@ -51,30 +77,41 @@ const SucursalesEmpresa: React.FC = () => {
       }
     };
   
+    fetchSucursal();
     fetchEmpresa();
-  }, [empresaId, url]);
+  }, [empresaId, url, dispatch]);
   
-  
-  
-
-  // Llama a la función handleSearch cuando se realiza una búsqueda
+  // Función para manejar la búsqueda de sucursales
   const onSearch = (query: string) => {
+    // Filtrar las sucursales según el nombre
     handleSearch(query, sucursalesEmpresa, 'nombre', setFilteredData);
   };
 
+  // Función para manejar la eliminación de una sucursal
   const onDelete = async (index: number) => {
+    // Obtener el ID de la sucursal a eliminar
     const sucursalId = filteredData[index].id;
     console.log('Eliminar sucursal con ID:', sucursalId);
   };
 
-  const handleEdit = (index: number) => {
-    const sucursalId = filteredData[index].id;
-    console.log('Editar sucursal con ID:', sucursalId);
+  // Función para manejar la edición de una sucursal
+  const handleEdit = (sucursal: Sucursal) => {
+    // Establecer isEditing a true y almacenar la sucursal a editar
+    setIsEditing(true); 
+    setSucursalEditar(sucursal)
+    // Abrir el modal de edición
+    dispatch(toggleModal({ modalName: "modal" }));
   };
+
+  // Función para manejar la adición de una nueva sucursal
   const handleAddSucursal = () => {
+    // Restablecer isEditing a false
+    setIsEditing(false);
+    // Abrir el modal de edición
     dispatch(toggleModal({ modalName: "modal" }));
   };
   
+  // Definir las columnas de la tabla de sucursales
   const columns: Column[] = [
     { id: 'nombre', label: 'Nombre', renderCell: (sucursal) => <>{sucursal.nombre}</> },
     { id: 'calle', label: 'Calle', renderCell: (sucursal) => <>{sucursal.domicilio.calle}</> },
@@ -91,8 +128,9 @@ const SucursalesEmpresa: React.FC = () => {
           <Typography variant="h5" gutterBottom>
            Sucursales de {nombreEmpresa}
           </Typography>
+          {/* Botón para agregar una nueva sucursal */}
           <Button
-          onClick={handleAddSucursal}
+            onClick={handleAddSucursal}
             sx={{
               bgcolor: "#fb6376",
               "&:hover": {
@@ -106,10 +144,13 @@ const SucursalesEmpresa: React.FC = () => {
           </Button>
         </Box>
         <Box sx={{mt:2 }}>
+          {/* Barra de búsqueda */}
           <SearchBar onSearch={onSearch} />
         </Box>
+        {/* Tabla de sucursales */}
         <TableComponent data={filteredData} columns={columns} onDelete={onDelete} onEdit={handleEdit} />
-        {/* <ModalSucursal getSucursales={fetchSucursales} /> */}
+        {/* Modal para editar/agregar sucursal */}
+        <ModalSucursal modalName="modal" initialValues={sucursalEditar || {id: 0, nombre: "", horarioApertura: "",horarioCierre:"0", domicilio: [] }} isEditMode={isEditing} getSucursales={fetchSucursal} />
       </Container>
     </Box>
   );
